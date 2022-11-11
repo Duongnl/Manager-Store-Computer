@@ -8,8 +8,6 @@ public class MenuNVBH
         this.tk = null;
         this.mk = null;
     }
-    
-    
     public MenuNVBH(String tk, String mk) {
         this.tk = tk;
         this.mk = mk;
@@ -26,17 +24,14 @@ public class MenuNVBH
     public void setMk(String mk) {
         this.mk = mk;
     }
-
     public void HanhDongNVBH ()
     {
         List_CT_TaiKhoan lcttk = new List_CT_TaiKhoan();
-        
         int LuaChon;
-
         do 
         {
-            System.out.println("MENU NHAN VIEN");
-            System.out.println("1.Xem thong tin tai khoan");
+          System.out.println("MENU NHAN VIEN");
+          System.out.println("1.Xem thong tin tai khoan");
           System.out.println("2.Doi mat khau");
           System.out.println("3.Xem san pham");
           System.out.println("4.Tim san pham");

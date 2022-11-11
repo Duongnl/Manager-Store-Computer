@@ -2,8 +2,39 @@
 public class MenuAD 
 {
     KiemTraDauVao ktr = new KiemTraDauVao();
-     
-    public void HanhDongAD ()
+   protected String tk;
+   protected String mk;
+
+   
+   public MenuAD() 
+   {
+     this.tk = null;
+     this.mk = null;
+  }    
+
+    public MenuAD(String tk, String mk) 
+    {
+      this.tk = tk;
+      this.mk = mk;
+   }
+
+   public String getTk() {
+      return tk;
+   }
+
+   public void setTk(String tk) {
+      this.tk = tk;
+   }
+
+   public String getMk() {
+      return mk;
+   }
+
+   public void setMk(String mk) {
+      this.mk = mk;
+   }
+
+   public void HanhDongAD ()
     {
       ktr.clearScreen();
       List_CT_TaiKhoan lcttk = new List_CT_TaiKhoan();
@@ -42,12 +73,13 @@ public class MenuAD
          else if (chon == 4)
          {
             ktr.clearScreen();
-            lcttk.Sua_TaiKhoan();
+            lcttk.Sua_TaiKhoan(tk);
          }
          else if (chon == 5)
          {
             ktr.clearScreen();
-            lcttk.Xoa_TaiKhoan();
+            lcttk.Xoa_TaiKhoan(getTk());
+           
          }
          else if (chon == 6)
          {

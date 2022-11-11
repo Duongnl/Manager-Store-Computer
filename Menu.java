@@ -46,7 +46,7 @@ public class Menu  {
                    else if (truonghop == 3)
                    {
                     ktr.clearScreen();
-                    MenuAD mnad = new MenuAD();
+                    MenuAD mnad = new MenuAD(dn.getTaiKhoanDN(), dn.getMatKhauDN());
                     mnad.HanhDongAD();
                    } 
                    else if (truonghop == 4)

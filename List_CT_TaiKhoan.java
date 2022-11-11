@@ -155,7 +155,7 @@ public class List_CT_TaiKhoan {
        
     }
    //------------------------------------------------------------------------------------------------
-   public void Sua_TaiKhoan ()
+   public void Sua_TaiKhoan (String tkvao)
    {
       
       String tkSet = ktr.KiemTraDangNhapTK();
@@ -205,15 +205,31 @@ public class List_CT_TaiKhoan {
                   else if (LuaChon == 3)
                   {
                     ktr.clearScreen();
-                    tt = ktr.KiemTraTinhTrang();
+                    if (tkvao.equals(List_CT_TK.get(i).getTaiKhoan()) == true)
+                    {
+                        System.out.println("Khong the khoa tai khoan hien tai ADMIN !");
+                        ktr.ChonTiepTuc();
+                    }
+                    else 
+                   {
+                     tt = ktr.KiemTraTinhTrang();
                     ktr.clearScreen();  
+                   }                 
                 }
                   else if (LuaChon == 4)
                   {
                     ktr.clearScreen();
-                    mq = ktr.KiemTraMaQuyen();
-                    ktr.clearScreen(); 
-                }
+                    if (tkvao.equals(List_CT_TK.get(i).getTaiKhoan()) == true)
+                    {
+                      System.out.println("Khong the doi ma quyen cua tai khoan hien tai ADMIN !");
+                      ktr.ChonTiepTuc();
+                    }
+                   else 
+                    {
+                        mq = ktr.KiemTraMaQuyen();
+                        ktr.clearScreen(); 
+                    }
+                 }
                    else if  (LuaChon == 5)
                   {
                     ktr.clearScreen(); 
@@ -236,7 +252,8 @@ public class List_CT_TaiKhoan {
         if (dem == 0) {System.out.println("Tai khoan : " + tkSet + " ,khong co trong danh sach!"); ktr.ChonTiepTuc();  }
    }
 //--------------------------------------------------------------------------------------------------------
-   public void Xoa_TaiKhoan ()
+   
+public void Xoa_TaiKhoan (String tk)
    {
     
     String tkDelete = ktr.KiemTraDangNhapTK();
@@ -251,9 +268,16 @@ public class List_CT_TaiKhoan {
             System.out.println("---------------------------------------------------------------"); 
             List_CT_TK.get(i).XuatThongTinTaiKhoan();
             dem ++;
+        
+            if (tkDelete.equals(tk)  == true)
+            {
+                System.out.println("Khong the xoa tai khoan hien tai ADMIN !");
+                ktr.ChonTiepTuc();
+            }
+            else
+            {
             System.out.println("Ban muon xoa tai khoan " + tkDelete + " ?");
             int LuaChon = 0;
-            
             System.out.println("1.Xoa");
             System.out.println("2.Khong");
             
@@ -272,6 +296,7 @@ public class List_CT_TaiKhoan {
             {
                 ktr.clearScreen();
             }
+          }
         
          }                     
     }
