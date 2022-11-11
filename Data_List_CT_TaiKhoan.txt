@@ -1,0 +1,3 @@
+admin.qlmt;123123;Mo;MQ3
+lochoang.qlmt;lochoang;Khoa;MQ1
+khachhang.qlmt;123123;Mo;MQ1
