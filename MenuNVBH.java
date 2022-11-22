@@ -35,9 +35,10 @@ public class MenuNVBH
           System.out.println("2.Doi mat khau");
           System.out.println("3.Xem san pham");
           System.out.println("4.Tim san pham");
-          System.out.println("5.Ban");
-          System.out.println("6.Dang xuat");
-          int x = 6;
+          System.out.println("5.Don hang cho xac nhan ban");
+          System.out.println("6.Ban truc tiep");
+          System.out.println("7.Dang xuat");
+          int x = 7;
           LuaChon = ktr.KiemTraLuaChon(x);
           if (LuaChon == 1)
           {
@@ -63,9 +64,35 @@ public class MenuNVBH
           }
           else if (LuaChon == 5)
           {
+            ktr.clearScreen();  
+            int c;
+          do  
+           { 
+              List_CT_YeuCau lyc = new List_CT_YeuCau();
+              lyc.DocFile_List_CT_YeuCau();
+              lyc.Xuat_ListYeuCau();
+              System.out.println("1.Truy cap don hang");
+              System.out.println("2.Thoat");
+              int x1 = 2;
+              c = ktr.KiemTraLuaChon(x1);
+              if (c == 1)
+              {
+                
+                lyc.Tim_KiemYeuCau(tk);
+              }
+              else if (c == 2)
+              {
+                ktr.clearScreen();
+              }
+
+
+           
+            }while (c != 2); 
+
+
 
           }
-           else if (LuaChon == 6)
+           else if (LuaChon == 7)
            {
             ktr.clearScreen();
          System.out.println("Ban muon dang xuat ?");
@@ -88,7 +115,7 @@ public class MenuNVBH
 
 
        
-        }while (LuaChon != 6);
+        }while (LuaChon != 7);
 
     }
 

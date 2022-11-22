@@ -48,8 +48,10 @@ public void HanhDongQLKHO()
           System.out.println("5.Nhap");
           System.out.println("6.Doi thong tin SP");
           System.out.println("7.Xoa san pham");
-          System.out.println("8.Dang xuat");
-          int x = 8;
+          System.out.println("8.Xem nha san xuat");
+          System.out.println("9.Xem nha cung cap");
+          System.out.println("10.Dang xuat");
+          int x = 10;
           LuaChon = ktr.KiemTraLuaChon(x);
           if (LuaChon == 1)
           {
@@ -67,7 +69,7 @@ public void HanhDongQLKHO()
           } 
           else if (LuaChon == 3)
           {
-
+    
           }
           else if (LuaChon == 4)
           {
@@ -77,7 +79,7 @@ public void HanhDongQLKHO()
           {
 
           }
-           else if (LuaChon == 6)
+           else if (LuaChon == 10)
            {
             ktr.clearScreen();
          System.out.println("Ban muon dang xuat ?");
@@ -98,7 +100,7 @@ public void HanhDongQLKHO()
          }
            }
        
-        }while (LuaChon != 6);
+        }while (LuaChon != 10);
 
 
 

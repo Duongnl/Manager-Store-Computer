@@ -32,9 +32,10 @@ public class CT_TaiKhoan {
 
     public void setTaiKhoan() {
        
-        TaiKhoan =ktr.KiemTraTaiKhoanDK();
+        TaiKhoan =ktr.KiemTraTaiKhoanDuocThem();
     }
-
+ 
+    
     // --------------------------------------------------------------------
     public String getMatKhau() {
         return MatKhau;

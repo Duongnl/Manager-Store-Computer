@@ -25,6 +25,7 @@ public class DangKy {
         
         TaiKhoanDK = ktr.KiemTraTaiKhoanDK();
     }
+    
 //-----------------------------------------------------------------------
     public String getMatKhauDK() {
         return MatKhauDK;

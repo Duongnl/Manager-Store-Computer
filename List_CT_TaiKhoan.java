@@ -27,7 +27,8 @@ public class List_CT_TaiKhoan {
 
     // --------------------------------------------------------------------------
     
-    public void Them_TaiKhoan() {
+    public void Them_TaiKhoan() 
+    {
         CT_TaiKhoan dt_cttk = new CT_TaiKhoan();
         dt_cttk.NhapThongTinTaiKhoan();
         
@@ -54,8 +55,6 @@ public class List_CT_TaiKhoan {
        {
         ktr.clearScreen();
        }
-       
-    
     }
 
     public void XuatList_TaiKhoan() {
@@ -181,11 +180,11 @@ public class List_CT_TaiKhoan {
                   System.out.printf("%-20s%-20s%-15s%-10s\n",tk, mk, tt, mq); 
                   System.out.println("---------------------------------------------------------------");
                   System.out.println("1.Doi tai khoan");
-                   System.out.println("2.Doi mat khau");
-                   System.out.println("3.Doi tinh trang ");
-                   System.out.println("4.Doi ma quyen");
-                   System.out.println("5.Luu thay doi");
-                   System.out.println("6.Khong luu thay doi");
+                  System.out.println("2.Doi mat khau");
+                  System.out.println("3.Doi tinh trang ");
+                  System.out.println("4.Doi ma quyen");
+                  System.out.println("5.Luu thay doi");
+                  System.out.println("6.Khong luu thay doi");
                    
                    int x =6;
                    LuaChon = ktr.KiemTraLuaChon(x);
@@ -193,7 +192,7 @@ public class List_CT_TaiKhoan {
                   if (LuaChon == 1)
                   {
                     ktr.clearScreen();
-                    tk =   ktr.KiemTraTaiKhoanDK();  
+                    tk =   ktr.KiemTraTaiKhoanDuocThem();  
                     ktr.clearScreen();  
                   }
                   else if (LuaChon ==2)
@@ -291,7 +290,7 @@ public void Xoa_TaiKhoan (String tk)
                 System.out.println("Da xoa tai khoan " + tkDelete + " !");
                GhiFile_List_CT_TaiKhoan();
                ktr.ChonTiepTuc();   
-            }
+              }
             else if (LuaChon == 2)
             {
                 ktr.clearScreen();
