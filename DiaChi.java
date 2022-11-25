@@ -33,43 +33,43 @@ public class DiaChi {
     public String getSoNha() {
         return SoNha;
     }
-    public void setSoNha(String SoNha) {
-        this.SoNha = SoNha;
+    public void setSoNha() {
+        System.out.println("Nhap So Nha:");
+        SoNha=ktr.ktraChuoiRong();
     }
 
     public String getDuong() {
         return Duong;
     }
 
-    public void setDuong(String Duong) {
-        this.Duong = Duong;
+    public void setDuong() {
+        System.out.println("Nhap Duong:");
+        Duong=ktr.ktraChuoiRong();
     }
 
     public String getQuan() {
         return Quan;
     }
 
-    public void setQuan(String Quan) {
-        this.Quan = Quan;
+    public void setQuan() {
+        System.out.println("Nhap Quan:");
+        Quan=ktr.ktraChuoiRong();
     }
 
     public String getThanhPho() {
         return ThanhPho;
     }
 
-    public void setThanhPho(String ThanhPho) {
-        this.ThanhPho = ThanhPho;
+    public void setThanhPho() {
+        System.out.println("Nhap Thanh pho:");
+        ThanhPho=ktr.ktraChuoiRong();
     }
     public void Input_ID()
     {   
-        System.out.println("Nhap So Nha:");
-        SoNha=ktr.ktraChuoiRong();
-        System.out.println("Nhap Duong:");
-        Duong=ktr.ktraChuoiRong();
-        System.out.println("Nhap Quan:");
-        Quan=ktr.ktraChuoiRong();
-        System.out.println("Nhap Thanh pho:");
-        ThanhPho=ktr.ktraChuoiRong();
+        setSoNha();
+        setDuong();
+        setQuan();
+        setThanhPho();
     }
     public void nhapdiachi(String SoNha, String Duong, String Quan, String ThanhPho)
     {
