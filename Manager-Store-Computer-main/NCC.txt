@@ -1,0 +1,2 @@
+NCC-001;Nha cung cap;12;abc;tan phu;hcm;0123456789
+NCC_001;Nha Cung Cap;12;tan ky;tan phu;Hcm;0123456789
