@@ -111,7 +111,8 @@ public String KiemTraMaQuyen ()
   {
   System.out.print("Nhap ma quyen (MQ__) : "); 
   DauVao = scanner.nextLine();
-   DauVao = DauVao.toUpperCase();
+  DauVao = DauVao.trim();
+  DauVao = DauVao.toUpperCase();
    if (DauVao.matches("MQ"+"[1-5]{1,2}"))
    {
     return DauVao;
@@ -134,7 +135,9 @@ public String KiemTraTaiKhoanDK()
   {
      System.out.print("Nhap SDT : "); 
      DauVao = scanner.nextLine();
+     DauVao = DauVao.trim();
      DauVao = DauVao.toUpperCase();
+    
      if (DauVao.matches("^(0|\\+84)(\\s|\\.)?((3[2-9])|(5[689])|(7[06-9])|(8[1-689])|(9[0-46-9]))(\\d)(\\s|\\.)?(\\d{3})(\\s|\\.)?(\\d{3})$"))
      {
         if (listcttk.KiemTraTKDK(DauVao) == false)
@@ -160,6 +163,7 @@ public String KiemTraTaiKhoanDuocThem()
   {
      System.out.print("Nhap tai khoan : "); 
      DauVao = scanner.nextLine();
+     DauVao = DauVao.trim();
      DauVao = DauVao.toUpperCase();
      if (DauVao.matches("^(0|\\+84)(\\s|\\.)?((3[2-9])|(5[689])|(7[06-9])|(8[1-689])|(9[0-46-9]))(\\d)(\\s|\\.)?(\\d{3})(\\s|\\.)?(\\d{3})$") || DauVao.matches("NV"+"[0-9]{1,10}") )
      {
@@ -187,6 +191,7 @@ public String KiemTraMatKhauDK ()
   {
     System.out.print("Nhap mat khau ( 5->10 ky tu) : "); 
     DauVao = scanner.nextLine();
+    DauVao = DauVao.trim();
     if (DauVao.matches("[a-zA-Z_0-9]{5,10}"))
     {
        if (DauVao.length() >=5 && DauVao.length() <=10 )
@@ -215,10 +220,12 @@ public String KiemTraDangNhapTK()
   {
      System.out.print("Tai khoan : "); 
      DauVao = scanner.nextLine();
+     DauVao = DauVao.trim();
      DauVao = DauVao.toUpperCase();
      if (DauVao.matches("^(0|\\+84)(\\s|\\.)?((3[2-9])|(5[689])|(7[06-9])|(8[1-689])|(9[0-46-9]))(\\d)(\\s|\\.)?(\\d{3})(\\s|\\.)?(\\d{3})$") ||  DauVao.matches("NV"+"[0-9]{1,10}") )
      {
-         return DauVao;   
+         
+      return DauVao;   
      }
      else 
      {
@@ -226,8 +233,7 @@ public String KiemTraDangNhapTK()
       System.out.println("Vui long nhap dung dinh dang! Khach hang nhap SDT / Nhan vien nhap MaNV (NV__) )");
         
      }
-      
-  
+    
     }
 }
 
@@ -248,6 +254,7 @@ public int KiemTraLuaChon(int x)
   do {
     System.out.print("Chon : ");
     DauVao = scanner.nextLine();
+    DauVao = DauVao.trim();
     if (KiemTra(DauVao) == true ) {
       if (Integer.parseInt(DauVao) > x || Integer.parseInt(DauVao) <1) {
         Chon = -1;
@@ -277,6 +284,7 @@ public void ChonTiepTuc ()
     System.out.print("Chon 1 de tiep tuc ! ");
     System.out.print("Chon : ");
     DauVao = scanner.nextLine();
+    DauVao = DauVao.trim();
     if (KiemTra(DauVao) == true) {
       if ( Integer.parseInt(DauVao) != 1) {
         Chon = -1;
@@ -301,7 +309,7 @@ public String KiemTraTinhTrang ()
   System.out.println("1.Mo");
   System.out.println("2.Khoa");   
   int x= 2;
- int LuaChon =KiemTraLuaChon(x);
+  int LuaChon =KiemTraLuaChon(x);
   
   if (LuaChon == 1)
   {
@@ -322,6 +330,7 @@ public int KiemTraSoLuong ()
   {
      System.out.print("So luong :  "); 
      DauVao = scanner.nextLine();
+     DauVao = DauVao.trim();
      DauVao = DauVao.toUpperCase();
      if ( DauVao.matches("[0-9]{1,10}") )
      {
@@ -340,10 +349,19 @@ public int KiemTraSoLuong ()
 
 }
 //------------------------------------------------------------------------------
-
-
-
-
-
+  public String ktraChuoiRong()
+  {
+    String DauVao;
+    while (true)
+    {
+      DauVao = scanner.nextLine();
+     if (DauVao != "")
+     {
+      return DauVao;
+     }
+     else
+     System.out.println("Nhap lai !");
+    }
+  }
 
 }
