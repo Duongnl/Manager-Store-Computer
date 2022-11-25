@@ -1,5 +1,0 @@
-MQ1;Quyen KH
-MQ2;Quyen NVBH
-MQ3;Quyen AD
-MQ4;Quyen QLKHO
-MQ5;Quyen QLNV
