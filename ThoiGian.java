@@ -114,9 +114,4 @@ public class ThoiGian {
     public String toString(){
         return ngay+"/"+thang+"/"+nam;
     }
-    public static void main(String[] args) {
-        ThoiGian test = new ThoiGian();
-        test.nhapThoiGian();
-        test.xuatThoiGian();
-    }
 }
