@@ -1,90 +1,122 @@
 import java.util.Scanner;
+
 public class ThoiGian {
-    private int Ngay;
-    private int Thang;
-    private int Nam;
-    Scanner sc=new Scanner(System.in);
+    Scanner sc = new Scanner(System.in);
+    private int ngay,thang,nam;
 
-    public ThoiGian()
-    {
-        Ngay=0;
-        Thang=0;
-        Nam=0;
+    public ThoiGian(){
+        ngay = 0 ;
+        thang = 0;
+        nam =0;
     }
 
-    public ThoiGian(int Ngay, int Thang, int Nam) {
-        this.Ngay = Ngay;
-        this.Thang = Thang;
-        this.Nam = Nam;
-    }
-
-    public int getNgay() {
-        return Ngay;
-    }
-    public void setNgay(int Ngay) {
-        this.Ngay = Ngay;
-    }
-
-    public int getThang() {
-        return Thang;
-    }
-    public void setThang(int Thang) {
-        this.Thang = Thang;
-    }
-
-    public int getNam() {
-        return Nam;
-    }
-    public void setNam(int Nam) {
-        this.Nam = Nam;
-    }
-    public int Check_Ngay() {
-        while (true) {
-            Ngay=sc.nextInt();
-            if (Ngay > 0 && Ngay <= 31) {
-                return Ngay;
-            } else {
-                System.out.print("Ngay khong hop le ! Moi nhap lai: ");
-            } 
-        }
-    }
-    public int Check_Thang() {
-        while (true) {
-            Thang=sc.nextInt();
-            if (Thang > 0 && Thang <= 12) {
-                return Thang;
-            } else {
-                System.out.print("Thang khong hop le ! Moi nhap lai: ");
-            } 
-        }
-    }
-    public int Check_Nam() {
-        while (true) {
-            Nam=sc.nextInt();
-            if (Nam > 999 && Nam <10000) {
-                return Nam;
-            } else {
-                System.out.print("Nam khong hop le ! Moi nhap lai: ");
-            } 
-        }
-    }
-    public void Input_ThoiGian()
-    {
-        System.out.println("Nhap Ngay:");
-        Ngay=Check_Ngay();
-        System.out.println("Nhap Thang:");
-        Thang=Check_Thang();
-        System.out.println("Nhap Nam:");
-        Nam=Check_Nam();
+    public ThoiGian(int ngay,int thang, int nam){
+        this.ngay = ngay;
+        this.thang = thang;
+        this.nam = nam;
     }
     
-    @Override
-    public String toString() {
-        return "ThoiGian [Ngay=" + Ngay + ", Thang=" + Thang + ", Nam=" + Nam + "]";
+    public ThoiGian(ThoiGian t){
+        this.ngay = t.ngay;
+        this.thang = t.thang;
+        this.nam = t.nam;
     }
 
-    public void Output_ThoiGian()
-    {
-        System.out.println("Thoi Gian: "+Ngay+"/"+Thang+"/"+Nam);
+    public boolean ktNamNhuan(int nam){
+        if(nam % 4 == 0){
+            if(nam % 100 == 0){
+                if(nam % 400 == 0)
+                    return true;
+                else 
+                    return false;
+            } else 
+                return true;
+        }else
+            return false;
+    }
+
+    public void setNgay(){
+        System.out.println("Nhap ngay: ");
+        while(true){
+            ngay = sc.nextInt();
+            if(thang == 1 || thang == 3 || thang == 5 || thang == 7 ||
+               thang == 8 || thang ==10 || thang == 12){
+                if(ngay<1 || ngay > 31)
+                    System.out.println("Nhap lai trong [ 1 - 31 ]: ");
+                else 
+                    return;
+            }else if(thang==2){
+                if(ktNamNhuan(nam))
+                    if(ngay<1 || ngay > 29)
+                    System.out.println("Nhap lai trong [1-29]");
+                    else
+                    return;
+                else
+                    if(ngay<1 || ngay > 28)
+                    System.out.println("Nhap lai trong [1-28]");
+                    else 
+                    return;
+            }
+            else {
+                if(ngay < 1 || ngay > 30) 
+                    System.out.println("Nhap lai trong [ 1 - 30 ]: ");
+                else 
+                return;
+            }
+        }
+    }
+
+    public void setThang(){
+        System.out.println("Nhap thang: ");
+        while(true){
+            thang = sc.nextInt();
+            if(thang<1 || thang >12)
+            System.out.println("Nhap lai trong [1 - 12]: ");
+            else
+            return;
+        }
+    }
+
+    public void setNam(){
+        System.out.println("Nhap nam: ");
+        while(true){
+            nam = sc.nextInt();
+            if(nam < 1900 || nam > 2022 ) {
+                System.out.println("Nhap lai trong [1990 - 2022 ]: ");
+            }
+            else
+            return;
+        }
+    }
+
+    public int getNgay(){
+        return ngay;
+    }
+
+    public int getThang(){
+        return thang;
+    }
+
+    public int getNam(){
+        return nam;
+    }
+
+    public void nhapThoiGian(){
+        setNam();
+        setThang();
+        setNgay();
+    }
+
+    public void xuatThoiGian(){
+        System.out.println(ngay + "/" + thang + "/" + nam);
+    }
+
+    public String toString(){
+        return ngay+"/"+thang+"/"+nam;
+    }
+    public static void main(String[] args) {
+        ThoiGian test = new ThoiGian();
+        test.nhapThoiGian();
+        test.xuatThoiGian();
     }
 }
