@@ -6,6 +6,7 @@ public class DiaChi {
     private String Duong;
     private String Quan;
     private String ThanhPho;
+    KiemTraDauVao ktr = new KiemTraDauVao();
     Scanner sc=new Scanner(System.in);
     public DiaChi()
     {
@@ -60,16 +61,15 @@ public class DiaChi {
         this.ThanhPho = ThanhPho;
     }
     public void Input_ID()
-    {
+    {   
         System.out.println("Nhap So Nha:");
-        SoNha=sc.nextLine();
+        SoNha=ktr.ktraChuoiRong();
         System.out.println("Nhap Duong:");
-        Duong=sc.nextLine();
+        Duong=ktr.ktraChuoiRong();
         System.out.println("Nhap Quan:");
-        Quan=sc.nextLine();
+        Quan=ktr.ktraChuoiRong();
         System.out.println("Nhap Thanh pho:");
-        ThanhPho=sc.nextLine();
-        
+        ThanhPho=ktr.ktraChuoiRong();
     }
     public void nhapdiachi(String SoNha, String Duong, String Quan, String ThanhPho)
     {
@@ -86,5 +86,5 @@ public class DiaChi {
     {
         System.out.println("Dia Chi: "+SoNha+"/"+Duong+"/"+Quan+"/"+ThanhPho);
     }
-    
+
 }
