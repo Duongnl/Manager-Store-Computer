@@ -56,7 +56,7 @@ public class MenuNVBH
             System.out.println("Doi mat khau thanh cong !");
             ktr.ChonTiepTuc();
           } 
-          else if (LuaChon == 3)
+           else if (LuaChon == 3)
           {
              List_ThietBi ltb = new List_ThietBi();
              ltb.DocFile_ThietBi();
