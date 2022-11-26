@@ -71,7 +71,7 @@ public class ThietBi{
     }
     public void setNha_CC() {
         System.out.println("Nhap vao Ma Nha Cung Cap: ");
-        NhaCC = sc.nextLine();
+        NhaCC = checkMa_NCC();
         List_NCC lncc = new List_NCC();
         lncc.NhapMoiNcc(NhaCC);
     }
@@ -79,12 +79,42 @@ public class ThietBi{
         return NhaSX;
     }
     public void setNha_SX() {
-        System.out.println("Nhap vao Ma Nha San Xuat: ");
-        NhaSX=sc.nextLine();
+        System.out.println("Nhap vao Ma Nha San Xuat: "); //aaaaa
+        NhaSX=checkMa_NSX();
+
         List_NSX lnsx = new List_NSX();
         lnsx.NhapMoiNsx(NhaSX);
     }
-    
+    public String  checkMa_NSX()
+    {
+        while(true){
+            String mansx=sc.nextLine();
+            mansx = mansx.toUpperCase();
+            if(mansx.matches("NSX" + "[0-9]{1,3}"))
+            {
+                return mansx;
+            } 
+            else {
+                System.out.println("Ding dang ma Nha San Xuat: . Vidu: NSX001");
+                System.out.println("Moi nhap lai: ");
+            } 
+        }
+    } 
+    public String  checkMa_NCC()
+    {
+        while(true){
+            String mancc=sc.nextLine();
+            mancc = mancc.toUpperCase();
+            if(mancc.matches("NCC" + "[0-9]{1,3}"))
+            {
+                return mancc;
+            } 
+            else {
+                System.out.println("Ding dang ma Nha Cung Cap: . Vidu: NCC001");
+                System.out.println("Moi nhap lai: ");
+            } 
+        }
+    } 
     public String getTSKT_TB() {
         return TSKT_TB;
     }
@@ -104,7 +134,7 @@ public class ThietBi{
             } 
         }
     }
-    public void Input_ThietBi(String matb)
+    public void  Input_ThietBi(String matb)
     {
         setMaTB(matb);
         setHangTB();
@@ -118,15 +148,12 @@ public class ThietBi{
     public void Output_ThietBi()
     {
        System.out.printf("%-20s%-20s%-20s%-20s%-20s%-20s%-20s%-20s\n",getMaTB(),getHangTB(),getSoluong(),getGia_nhap(),getGia_ban(),getTSKT_TB(),getNhaSX(),getNhaCC());
-       System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------------");
-
+      
     }
     @Override
     public String toString() {
         return  MaTB + ";" + HangTB + ";" + Soluong + ";" + Gia_nhap
                 + ";" + Gia_ban + ";" + TSKT_TB + ";" + NhaSX + ";" + NhaCC ;
     }
-    
-
     
 }
