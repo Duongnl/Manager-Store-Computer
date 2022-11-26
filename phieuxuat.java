@@ -1,4 +1,3 @@
-package do_an;
 import java.util.Scanner;
 public class phieuxuat {
     Scanner ip = new Scanner( System.in);
