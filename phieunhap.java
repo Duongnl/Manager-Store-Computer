@@ -69,5 +69,7 @@ public class phieunhap  {
         this.total_money = total_money;
     }
     
+    // chinh sua chinh sua
+    
     
 }
