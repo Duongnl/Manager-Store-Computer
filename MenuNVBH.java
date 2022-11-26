@@ -33,8 +33,10 @@ public class MenuNVBH
           System.out.println("MENU NHAN VIEN");
           System.out.println("1.Xem thong tin tai khoan");
           System.out.println("2.Doi mat khau");
+          
           System.out.println("3.Xem san pham");
           System.out.println("4.Tim san pham");
+          
           System.out.println("5.Don hang cho xac nhan ban");
           System.out.println("6.Ban truc tiep");
           System.out.println("7.Dang xuat");
@@ -56,11 +58,15 @@ public class MenuNVBH
           } 
           else if (LuaChon == 3)
           {
-
+             List_ThietBi ltb = new List_ThietBi();
+             ltb.DocFile_ThietBi();
+             ltb.XuatThietBi();
           }
           else if (LuaChon == 4)
           {
-
+            List_ThietBi ltb = new List_ThietBi();
+             ltb.DocFile_ThietBi();
+             ltb.TimKiemThietBi();
           }
           else if (LuaChon == 5)
           {

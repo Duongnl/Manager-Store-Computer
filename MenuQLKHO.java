@@ -45,7 +45,7 @@ public void HanhDongQLKHO()
           System.out.println("2.Doi mat khau");
           System.out.println("3.Xem san pham");
           System.out.println("4.Tim san pham");
-          System.out.println("5.Nhap");
+          System.out.println("5.Nhap san pham");
           System.out.println("6.Doi thong tin SP");
           System.out.println("7.Xoa san pham");
           System.out.println("8.Xem nha san xuat");
@@ -69,15 +69,24 @@ public void HanhDongQLKHO()
           } 
           else if (LuaChon == 3)
           {
+            List_ThietBi ltb = new List_ThietBi();
+            ltb.DocFile_ThietBi();
+            ltb.XuatThietBi();
     
           }
           else if (LuaChon == 4)
           {
-
+            List_ThietBi ltb = new List_ThietBi();
+            ltb.DocFile_ThietBi();
+            ltb.TimKiemThietBi();
           }
+
           else if (LuaChon == 5)
           {
-
+            List_ThietBi ltb = new List_ThietBi();
+            ltb.DocFile_ThietBi();
+            ltb.ThemThietBi();
+            ltb.GhiFile_ThietBi();
           }
            else if (LuaChon == 10)
            {
