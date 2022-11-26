@@ -118,7 +118,8 @@ public class ThietBi{
     public void Output_ThietBi()
     {
        System.out.printf("%-20s%-20s%-20s%-20s%-20s%-20s%-20s%-20s\n",getMaTB(),getHangTB(),getSoluong(),getGia_nhap(),getGia_ban(),getTSKT_TB(),getNhaSX(),getNhaCC());
-      
+       System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------");
+
     }
     @Override
     public String toString() {
