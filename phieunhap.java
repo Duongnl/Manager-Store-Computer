@@ -1,4 +1,3 @@
-package do_an;
 import java.util.Scanner;
 public class phieunhap  {
     Scanner ip = new Scanner(System.in);
