@@ -35,7 +35,8 @@ public class NhanVien extends ConNguoi {
         System.out.println("+------+-------------------------+------------+------------+--------------------------------------------------+");
     }
 
-    public String dinhDangFile(){
-        return maNV+";"+ten+";"+sdt+";"+ns+";"+dc;
+    @Override
+    public String toString() {
+         return "NV" + ";" + maNV+";"+ten+";"+sdt+";"+ns+";"+dc;
     }
 }

@@ -39,7 +39,7 @@ public class KiemTraDauVao {
   public boolean KiemTra(String input) 
   {
     boolean flag;
-    String digit = "\\d";
+    String digit = "[0-9]{1,10}";
     flag = input.matches(digit);
     return flag;
   }
@@ -418,7 +418,7 @@ public String ktraMaNV(){
     while (true) {
         Dauvao = scanner.nextLine();
         Dauvao = Dauvao.toUpperCase();
-        if (Dauvao.matches("KH" + "[0-9]{1,2}")) {
+        if (Dauvao.matches("NV" + "[0-9]{1,2}")) {
            return Dauvao;
         } else {
             System.out.println("Dinh dang ma nhan vien NV__. Vd: NV01");

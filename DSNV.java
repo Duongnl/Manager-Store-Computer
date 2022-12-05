@@ -243,7 +243,7 @@ public class DSNV implements docGhiFile{
             FileWriter fw = new FileWriter("DSNV.txt");
             BufferedWriter bw = new BufferedWriter(fw);
             for (int i = 0; i < list.size(); i++) {
-                bw.write(list.get(i).dinhDangFile());
+                bw.write(list.get(i).toString());
                 bw.newLine();
             }
             bw.close();
@@ -263,10 +263,11 @@ public class DSNV implements docGhiFile{
                     break;
                 }
                 String txt[] = line.split(";");
-                 String maNV = txt[0];
-                 String ten = txt[1];
-                 String sdt = txt[2];
-                 String Thoigian=txt[3];
+                 String loaiNV = txt[0];
+                 String maNV = txt[1];
+                 String ten = txt[2];
+                 String sdt = txt[3];
+                 String Thoigian=txt[4];
                  String subtxt[] = Thoigian.split("/");
                  int ngay = Integer.parseInt(subtxt[0]);
                  int thang = Integer.parseInt(subtxt[1]);
@@ -275,11 +276,117 @@ public class DSNV implements docGhiFile{
                  String duong = txt[5];
                  String phuong = txt[6];
                  String tp = txt[7];
-                 list.add(new NhanVien(maNV,ten,sdt,new ThoiGian(ngay, thang, nam),new DiaChi(soNha,duong,phuong,tp)));
+                 
+                 if (loaiNV.equals("NVBH")==true)                      
+                {
+                 list.add(new NVBanHang(maNV,ten,sdt,new ThoiGian(ngay, thang, nam),new DiaChi(soNha,duong,phuong,tp)));
+                } 
+                else if (loaiNV.equals("NVQK")==true)
+                {
+                    list.add(new NVQuanKho(maNV,ten,sdt,new ThoiGian(ngay, thang, nam),new DiaChi(soNha,duong,phuong,tp)));
+                }
+                else if (loaiNV.equals("NVQL")==true)
+                {
+                    list.add(new NVQuanLy(maNV,ten,sdt,new ThoiGian(ngay, thang, nam),new DiaChi(soNha,duong,phuong,tp)));
+                }
             }
           fr.close();
           br.close();
         } catch (Exception e) {
         }
     }
+   public void XemNVQK ()
+   {
+    int k=0;  
+    System.out.println(
+                    "+------+-------------------------+------------+------------+--------------------------------------------------+");
+            System.out.printf("|%-6s|%-25s|%-12s|%-12s|%-50s|\n", "Ma NV", "Ten NV", "SDT", "Ngay sinh", "Dia chi");
+            System.out.println(
+                    "+------+-------------------------+------------+------------+--------------------------------------------------+");
+    for (int i = 0; i<list.size(); i++)
+     {
+        if (list.get(i) instanceof NVQuanKho)
+        {
+            list.get(i).output();
+           k++;
+        }
+     }
+     if (k ==0)
+     {
+        System.out.println("Khong co nhan vien quan kho !");
+     }
+   
+    }  
+     
+    public void XemNVQL ()
+    {
+     int k=0;  
+     System.out.println(
+                     "+------+-------------------------+------------+------------+--------------------------------------------------+");
+             System.out.printf("|%-6s|%-25s|%-12s|%-12s|%-50s|\n", "Ma NV", "Ten NV", "SDT", "Ngay sinh", "Dia chi");
+             System.out.println(
+                     "+------+-------------------------+------------+------------+--------------------------------------------------+");
+     for (int i = 0; i<list.size(); i++)
+      {
+         if (list.get(i) instanceof NVQuanLy)
+         {
+             list.get(i).output();
+            k++;
+         }
+      }
+      if (k ==0)
+      {
+         System.out.println("Khong co nhan vien quan ly !");
+      }
+    
+     }  
+     
+     public void XemNVBH ()
+     {
+      int k=0;  
+      System.out.println(
+                      "+------+-------------------------+------------+------------+--------------------------------------------------+");
+              System.out.printf("|%-6s|%-25s|%-12s|%-12s|%-50s|\n", "Ma NV", "Ten NV", "SDT", "Ngay sinh", "Dia chi");
+              System.out.println(
+                      "+------+-------------------------+------------+------------+--------------------------------------------------+");
+      for (int i = 0; i<list.size(); i++)
+       {
+          if (list.get(i) instanceof NVBanHang)
+          {
+              list.get(i).output();
+             k++;
+          }
+       }
+       if (k ==0)
+       {
+          System.out.println("Khong co nhan vien ban hang !");
+       }
+     
+      }  
+       
+     public String LaySDT ()
+     {
+       return list.get(list.size()-1).getSDT();
+     }
+     
+     public String LayLoaiNV ()
+     {
+       if (list.get(list.size()-1) instanceof NVBanHang)
+        {
+            return "NVBH";
+        }
+       else if (list.get(list.size()-1) instanceof NVQuanKho)
+        {
+            return "NVQK";
+        }  
+        else 
+        {
+            return "NVQL";
+        }
+      }
+     
+
+
+
+
 }

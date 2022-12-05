@@ -7,5 +7,9 @@ public class NVBanHang extends NhanVien{
         super(maNV, hoten, sdt, ns, dc);
     }
 
-    
+
+    @Override
+    public String toString() {
+         return "NVBH" + ";" + maNV+";"+ten+";"+sdt+";"+ns+";"+dc;
+    }
 }

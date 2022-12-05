@@ -27,6 +27,7 @@ public class MenuNVBH
     public void HanhDongNVBH ()
     {
         List_CT_TaiKhoan lcttk = new List_CT_TaiKhoan();
+        lcttk.DocFile_List_CT_TaiKhoan();
         int LuaChon;
         do 
         {
@@ -36,7 +37,7 @@ public class MenuNVBH
           
           System.out.println("3.Xem san pham");
           System.out.println("4.Tim san pham");
-          
+           
           System.out.println("5.Don hang cho xac nhan ban");
           System.out.println("6.Ban truc tiep");
           System.out.println("7.Dang xuat");

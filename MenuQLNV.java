@@ -29,9 +29,11 @@ public class MenuQLNV
     public void HanhDongQLNV ()
     {
         List_CT_TaiKhoan lcttk = new List_CT_TaiKhoan();
-        
+       lcttk.DocFile_List_CT_TaiKhoan();
+        DSNV dsnv = new DSNV();
+        dsnv.docFile();
         int LuaChon;
-
+        int x ;
         do 
         {
           System.out.println("MENU QUAN LY NHAN VIEN");
@@ -42,7 +44,7 @@ public class MenuQLNV
           System.out.println("5.Xoa nhan vien");
           System.out.println("6.Doi thong tin nhan vien");
           System.out.println("7.Dang xuat");
-          int x = 7;
+          x = 7;
           LuaChon = ktr.KiemTraLuaChon(x);
           if (LuaChon == 1)
           {
@@ -61,19 +63,62 @@ public class MenuQLNV
           } 
           else if (LuaChon == 3)
           {
-
+            dsnv.themNhanVien();
+            String loainv = dsnv.LayLoaiNV();
+            String tk = dsnv.LaySDT();
+          
+            lcttk.ThemTKTuDong(loainv,tk);
+           
+           
+    
           }
           else if (LuaChon == 4)
           {
+             
+            do
+            {
+              System.out.println("1.Xem tat ca nhan vien");
+              
+              System.out.println("2.Xem nhan vien quan ly");
+              System.out.println("3.Xem nhan vien quan kho");
+              System.out.println("4.Xem nhan vien ban hang");
+              System.out.println("5.Quay lai");
+              
+              x= 5;
+              LuaChon = ktr.KiemTraLuaChon(x);
+              if (LuaChon == 1)
+              {
+                dsnv.xuatDSNV();
+              }
+              else if (LuaChon == 2)
+              {
+              dsnv.XemNVQL();
+            }
+            else if (LuaChon == 3)
+            {
+              dsnv.XemNVQK();
+                
+            }
+            else if (LuaChon == 4)
+            {
+              dsnv.XemNVBH();
+                
+            }
+  
+          
+          
+            
 
+            }while(LuaChon!=5);
+          
           }
           else if (LuaChon == 5)
           {
-
+             dsnv.xoaN();
           }
           else if (LuaChon == 6)
           {
-
+            dsnv.suaTTNV();
           }
           else if (LuaChon == 7)
           {

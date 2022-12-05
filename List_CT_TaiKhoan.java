@@ -57,6 +57,32 @@ public class List_CT_TaiKhoan {
        }
     }
 
+    public void ThemTKTuDong(String loainv, String tk)
+    {
+       
+        CT_TaiKhoan cttk;
+        if (loainv.equals("NVBH"))
+        {
+             cttk = new CT_TaiKhoan(tk, "123123", "Mo", "MQ2");
+             this.List_CT_TK.add(cttk);
+        }
+        else if (loainv.equals("NVQL"))
+        {
+             cttk = new CT_TaiKhoan(tk, "123123", "Mo", "MQ5");
+             this.List_CT_TK.add(cttk);
+        }
+        else if (loainv.equals("NVQK"))
+        {
+             cttk = new CT_TaiKhoan(tk, "123123", "Mo", "MQ4");
+             this.List_CT_TK.add(cttk);
+        }
+      
+      GhiFile_List_CT_TaiKhoan();
+    }
+
+
+
+
     public void XuatList_TaiKhoan() {
         System.out.println("\n----------------------THONG-TIN-TAI-KHOAN----------------------");
         if (List_CT_TK.size() == 0)
@@ -105,8 +131,8 @@ public class List_CT_TaiKhoan {
     }
 
     // -----------------------------------------------------------------------
-    public ArrayList<List_CT_TaiKhoan> DocFile_List_CT_TaiKhoan() {
-        ArrayList<List_CT_TaiKhoan> list = new ArrayList<>();
+    public ArrayList<CT_TaiKhoan> DocFile_List_CT_TaiKhoan() {
+        ArrayList<CT_TaiKhoan> list = new ArrayList<>();
         try {
             FileReader fr = new FileReader("Data_List_CT_TaiKhoan.txt");
             BufferedReader br = new BufferedReader(fr);
@@ -445,7 +471,7 @@ public int KiemTraQuyen (String tk, String mk)
 //----------------------------------------------------------------------------------------
 public String DoiMK ( String tk ,String mk)
 {
-    DocFile_List_CT_TaiKhoan();
+   // DocFile_List_CT_TaiKhoan();
     for (int i = 0; i< List_CT_TK.size(); i++)
     {
         if (tk.equals(List_CT_TK.get(i).getTaiKhoan())  == true && mk.equals(List_CT_TK.get(i).getMatKhau())  == true )

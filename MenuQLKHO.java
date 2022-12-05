@@ -35,7 +35,7 @@ public void setMk(String mk) {
 public void HanhDongQLKHO()
 {
     List_CT_TaiKhoan lcttk = new List_CT_TaiKhoan();
-        
+      lcttk.DocFile_List_CT_TaiKhoan();  
         int LuaChon;
 
         do 
