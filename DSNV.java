@@ -390,30 +390,24 @@ public class DSNV implements docGhiFile{
         }
       }
      
-    public char SttHienTai ()
+    public String SttHienTai ()
     {
        
           
         if (list.size() == 0)
         {
             
-            char get = '0';
-          return get;
+          
+          return "0";
         }
        else  
       {
          String s = list.get(list.size()-1).getMaNV();
-        char gets = s.charAt(2);
-        for (int i = 3; i<s.length(); i++)
-        {
-          
-            gets += s.charAt(i);     
-        }
+         String gets = null;
+         char[] c = s.toCharArray();
+        gets = String.copyValueOf(c,2,s.length()-2);
         return gets;
-      
        
-
-    
       }
     }
 
