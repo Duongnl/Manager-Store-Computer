@@ -4,16 +4,29 @@ public class NhanVien extends ConNguoi {
     protected String maNV;
     Scanner sc = new Scanner(System.in);
     KiemTraDauVao ktr = new KiemTraDauVao();    
+    public static int stt =0;
     public NhanVien(){
         super();
         maNV = null;
+        stt++;
+        maNV = "NV" + stt;
     }
 
     public NhanVien(String maNV,String hoten,String sdt,ThoiGian ns,DiaChi dc){
         super(hoten, sdt, ns, dc);
         this.maNV=maNV;
+        stt++;
+        maNV = "NV" + stt;
     }
-
+//----------------------------------------------------
+    public static int getStt() {
+        return stt;
+    }
+    
+    public static void setStt(int stt) {
+        NhanVien.stt = stt;
+    }
+//-------------------------------------------------
     public void setMaNV(){
         maNV=ktr.ktraMaNV();
     }
@@ -23,7 +36,7 @@ public class NhanVien extends ConNguoi {
     }
     
     public void input(){
-        setMaNV();
+       // setMaNV();
         setHoTen();
         setSDT();
         ns.nhapThoiGian();

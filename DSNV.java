@@ -172,7 +172,7 @@ public class DSNV implements docGhiFile{
                 int flag = 0;
                 while (flag == 0) {
                     System.out.println("Nhap ma nhan vien: ");
-                    String makh = ktr.ktraMaKH();
+                    String makh = ktr.ktraMaNV();
                     for (int i = 0; i < list.size(); i++) {
                         if (makh.equals(list.get(i).getMaNV())) {
                             flag = 1;
@@ -190,6 +190,7 @@ public class DSNV implements docGhiFile{
                                 case 1:
                                 list.remove(i);
                                 System.out.println("Xoa thanh cong!");
+                                
                                 break;
                                 case 2:
                                  System.out.println("Ban co muon chon nhan khac?");
@@ -272,11 +273,15 @@ public class DSNV implements docGhiFile{
                  int ngay = Integer.parseInt(subtxt[0]);
                  int thang = Integer.parseInt(subtxt[1]);
                  int nam = Integer.parseInt(subtxt[2]);
-                 String soNha = txt[4];
-                 String duong = txt[5];
-                 String phuong = txt[6];
-                 String tp = txt[7];
+                
+                 String soNha = txt[5];
+                 String duong = txt[6];
+                 String phuong = txt[7];
+                 String tp = txt[8]; 
                  
+                
+                 
+
                  if (loaiNV.equals("NVBH")==true)                      
                 {
                  list.add(new NVBanHang(maNV,ten,sdt,new ThoiGian(ngay, thang, nam),new DiaChi(soNha,duong,phuong,tp)));
@@ -364,9 +369,9 @@ public class DSNV implements docGhiFile{
      
       }  
        
-     public String LaySDT ()
+     public String LayMANV ()
      {
-       return list.get(list.size()-1).getSDT();
+       return list.get(list.size()-1).getMaNV();
      }
      
      public String LayLoaiNV ()
@@ -385,6 +390,33 @@ public class DSNV implements docGhiFile{
         }
       }
      
+    public char SttHienTai ()
+    {
+       
+          
+        if (list.size() == 0)
+        {
+            
+            char get = '0';
+          return get;
+        }
+       else  
+      {
+         String s = list.get(list.size()-1).getMaNV();
+        char gets = s.charAt(2);
+        for (int i = 3; i<s.length(); i++)
+        {
+          
+            gets += s.charAt(i);     
+        }
+        return gets;
+      
+       
+
+    
+      }
+    }
+
 
 
 

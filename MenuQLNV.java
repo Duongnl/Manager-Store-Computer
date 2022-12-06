@@ -29,9 +29,11 @@ public class MenuQLNV
     public void HanhDongQLNV ()
     {
         List_CT_TaiKhoan lcttk = new List_CT_TaiKhoan();
-       lcttk.DocFile_List_CT_TaiKhoan();
+        lcttk.DocFile_List_CT_TaiKhoan();
         DSNV dsnv = new DSNV();
         dsnv.docFile();
+        int sttHienTai = Integer.parseInt(String.valueOf(dsnv.SttHienTai()));
+        NhanVien.setStt(sttHienTai);
         int LuaChon;
         int x ;
         do 
@@ -65,7 +67,7 @@ public class MenuQLNV
           {
             dsnv.themNhanVien();
             String loainv = dsnv.LayLoaiNV();
-            String tk = dsnv.LaySDT();
+            String tk = dsnv.LayMANV();
           
             lcttk.ThemTKTuDong(loainv,tk);
            
