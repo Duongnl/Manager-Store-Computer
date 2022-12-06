@@ -32,7 +32,7 @@ public class MenuQLNV
         lcttk.DocFile_List_CT_TaiKhoan();
         DSNV dsnv = new DSNV();
         dsnv.docFile();
-        int sttHienTai = Integer.parseInt(String.valueOf(dsnv.SttHienTai()));
+        int sttHienTai = Integer.parseInt(dsnv.SttHienTai());
         NhanVien.setStt(sttHienTai);
         int LuaChon;
         int x ;
